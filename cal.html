@@ -1,0 +1,118 @@
+<html> 
+     <head> 
+         <style> 
+		       div.info
+			   {
+				 color:green;
+			   }
+			   
+               div.title
+		       { 
+		          background-color:green;
+		          font-size:40px;
+                  margin-bottom: 20px; 
+                  text-align:center; 
+                  width: 210px; 
+                  border: solid black 2px; 
+		          border-color:gray;
+                } 
+  
+                input[type="button"] 
+                { 
+                   background-color:green; 
+                   color: black; 
+                   border: solid black 2px; 
+		           font-size:40px;
+                   width:100%; 
+				   height:100%;
+                } 
+		 
+		        input[type="button"]:hover
+		        {
+		           background-color: yellow;
+		        }
+  
+                input[type="text"] 
+                { 
+                   background-color:white; 
+		           font-size:40px;
+                   border: solid black 2px; 
+                   width:100% ;
+				   height:100%;
+                } 
+		 
+         </style> 
+     </head> 
+   
+     <body bgcolor="black">
+	     <center>
+		     <div class = title >Calculator</div> 
+		
+		     <table border="2" width="500" height="500"> 
+                 <tr> 
+                     <td colspan="3"><input type="text" id="result"/></td>
+                     <!-------------------To clear result-------------------->
+                     <td><input style=background-color:red type="button" value="c" onclick="clr()"/> </td> 
+                 </tr>
+		 
+                 <tr> 
+                     <!-- create button and assign value to each button -->
+                     <td><input type="button" id="1" value="1" onclick="dis('1')"/> </td> 
+                     <td><input type="button" id="2" value="2" onclick="dis('2')"/> </td> 
+                     <td><input type="button" id="3" value="3" onclick="dis('3')"/> </td> 
+                     <td><input type="button" id="/" value="/" onclick="dis('/')"/> </td> 
+                 </tr> 
+		 
+                 <tr> 
+                     <td><input type="button" id="4" value="4" onclick="dis('4')"/> </td> 
+                     <td><input type="button" id="5" value="5" onclick="dis('5')"/> </td> 
+                     <td><input type="button" id="6" value="6" onclick="dis('6')"/> </td> 
+                     <td><input type="button" id="-" value="-" onclick="dis('-')"/> </td> 
+                 </tr>
+		 
+                 <tr> 
+                     <td><input type="button" id="7" value="7" onclick="dis('7')"/> </td> 
+                     <td><input type="button" id="8" value="8" onclick="dis('8')"/> </td> 
+                     <td><input type="button" id="9" value="9" onclick="dis('9')"/> </td> 
+                     <td><input type="button" id="+" value="+" onclick="dis('+')"/> </td> 
+                 </tr>
+		 
+                 <tr> 
+                     <td><input type="button" id="." value="." onclick="dis('.')"/> </td> 
+                     <td><input type="button" id="0" value="0" onclick="dis('0')"/> </td> 
+                     <td><input type="button" id="=" value="=" onclick="solve()"/> </td>  <!-- call solve() function-->
+                     <td><input type="button" id="*" value="*" onclick="dis('*')"/> </td> 
+                 </tr> 
+             </table>
+		<center>
+	
+	  
+	  
+	     <script> 
+             //function to display value 
+             function dis(val) 
+             { 
+                 document.getElementById("result").value+=val 
+             } 
+           
+             //function to evaluate values
+             function solve() 
+             { 
+                 let x = document.getElementById("result").value ;
+                 let y = eval(x) ;
+				 document.getElementById("result").value=y;
+				 
+                 
+             } 
+           
+             //function to clear display
+             function clr() 
+             {
+                 document.getElementById("result").value = "" ;
+             } 
+         </script> 
+		 
+		 <hr>
+		 <div class="info">JavaScript 5th sem project<div>
+     </body> 
+</html>   
